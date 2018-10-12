@@ -1,0 +1,12 @@
+redis_bind_address: "127.0.0.1"
+redis_backup_enabled: "yes"
+redis_backup_schedule: "0 19 * * *"
+redis_backup_target: "file:///backups/redis"
+redis_backup_profiles:
+  - name: redis
+    schedule: "{{ redis_backup_schedule }}"
+    source: "/var/lib/redis"
+    target: "{{ redis_backup_target }}"
+
+redis_backup_max_age: "1M"
+redis_backup_full_max_age: "1M"
