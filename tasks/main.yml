@@ -1,3 +1,2 @@
 ---
-- name: Install Redis and configure backup
-  hosts: redis
+
