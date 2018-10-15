@@ -3,35 +3,22 @@ galaxy_info:
   author: Ona Engineering
   description: This role is used to install and configure Redis
   min_ansible_version: 2.1
-  license: BSD
-  platforms:
-    - name: Ubuntu
-      verions:
-      - all
-    - name: EL
-      versions:
-        - 6
-        - 7
-    - name: AmazonLinux
-      versions:
-        - all
+  license: MIT
   categories:
     - redis
-  dependencies:
-    -  role: DavidWittman.redis
-       become: true
-       become_user: "root"
-       redis_bind: "{{ redis_bind_address }}"
-       tags:
-         - redis
-
-    - role: Stouts.backup
-      become: true
-      become_user: "root"
-      backup_enabled: "{{ redis_backup_enabled }}"
-      backup_profiles: "{{ redis_backup_profiles }}"
-      backup_max_age: "{{ redis_backup_max_age }}"
-      backup_full_max_age: "{{ redis_backup_full_max_age }}"
-      tags:
-          - backup
-
+dependencies:
+  - role: DavidWittman.redis
+    become: true
+    become_user: "root"
+    redis_bind: "{{ redis_bind_address }}"
+    tags:
+      - redis
+  - role: Stouts.backup
+    become: true
+    become_user: "root"
+    backup_enabled: "{{ redis_backup_enabled }}"
+    backup_profiles: "{{ redis_backup_profiles }}"
+    backup_max_age: "{{ redis_backup_max_age }}"
+    backup_full_max_age: "{{ redis_backup_full_max_age }}"
+    tags:
+      - backup
