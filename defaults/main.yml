@@ -1,5 +1,5 @@
 redis_bind_address: "127.0.0.1"
-redis_backup_enabled: "yes"
+redis_backup_enabled: yes
 redis_backup_schedule: "0 19 * * *"
 redis_backup_target: "file:///backups/redis"
 redis_backup_profiles:
