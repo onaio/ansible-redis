@@ -16,6 +16,7 @@ dependencies:
   - role: Stouts.backup
     become: true
     become_user: "root"
+    backup_cron_filename: "{{ redis_backup_cron_filename }}"
     backup_enabled: "{{ redis_backup_enabled }}"
     backup_profiles: "{{ redis_backup_profiles }}"
     backup_max_age: "{{ redis_backup_max_age }}"

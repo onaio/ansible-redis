@@ -16,3 +16,4 @@ redis_backup_profiles:
 
 redis_backup_max_age: "1M"
 redis_backup_full_max_age: "1M"
+redis_backup_cron_filename: "backup_redis"
