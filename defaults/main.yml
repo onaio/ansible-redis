@@ -2,6 +2,12 @@ redis_bind_address: "127.0.0.1"
 redis_backup_enabled: yes
 redis_backup_schedule: "0 19 * * *"
 redis_backup_target: "file:///backups/redis"
+redis_backup_import_gpg_keys: false
+redis_backup_system_user: "root"
+redis_backup_system_group: "root"
+redis_backup_gpg_private_key:
+redis_backup_gpg_public_key:
+redis_backup_gpg_trust_file:
 redis_backup_gpg_key: disabled
 redis_backup_gpg_pw: ""
 redis_backup_gpg_opts: ''

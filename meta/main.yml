@@ -13,6 +13,19 @@ dependencies:
     redis_bind: "{{ redis_bind_address }}"
     tags:
       - redis
+
+  - role: onaio.gpg-import
+    vars:
+      gpg_user: "{{ redis_backup_system_user }}"
+      gpg_group: "{{ redis_backup_system_group }}"
+      gpg_private_key: "{{ redis_backup_gpg_private_key }}"
+      gpg_public_key: "{{ redis_backup_gpg_public_key }}"
+      gpg_trust_file: "{{ redis_backup_gpg_trust_file }}"
+    when: redis_backup_enabled == true and redis_backup_import_gpg_keys == true
+    tags:
+      - backup
+      - gpg-import
+
   - role: Stouts.backup
     become: true
     become_user: "root"
