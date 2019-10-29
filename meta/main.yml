@@ -36,3 +36,4 @@ dependencies:
     backup_full_max_age: "{{ redis_backup_full_max_age }}"
     tags:
       - backup
+    when: redis_backup_enabled
