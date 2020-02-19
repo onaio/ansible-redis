@@ -26,7 +26,7 @@ dependencies:
       - backup
       - gpg-import
 
-  - role: Stouts.backup
+  - role: onaio.backup
     become: true
     become_user: "root"
     backup_cron_filename: "{{ redis_backup_cron_filename }}"
