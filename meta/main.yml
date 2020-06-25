@@ -19,6 +19,7 @@ dependencies:
       gpg_user: "{{ redis_backup_system_user }}"
       gpg_group: "{{ redis_backup_system_group }}"
       gpg_private_key: "{{ redis_backup_gpg_private_key }}"
+      gpg_private_key_passphrase: "{{ redis_backup_gpg_pass }}"
       gpg_public_key: "{{ redis_backup_gpg_public_key }}"
       gpg_trust_file: "{{ redis_backup_gpg_trust_file }}"
     when: redis_backup_enabled == true and redis_backup_import_gpg_keys == true
@@ -34,6 +35,8 @@ dependencies:
     backup_profiles: "{{ redis_backup_profiles }}"
     backup_max_age: "{{ redis_backup_max_age }}"
     backup_full_max_age: "{{ redis_backup_full_max_age }}"
+    backup_target_user: "{{ redis_backup_target_user }}"
+    backup_target_pass: "{{ redis_backup_target_pass }}"
     tags:
       - backup
     when: redis_backup_enabled
