@@ -7,10 +7,14 @@ redis_backup_system_user: "root"
 redis_backup_system_group: "root"
 redis_backup_gpg_private_key:
 redis_backup_gpg_public_key:
+redis_backup_gpg_pass:
 redis_backup_gpg_trust_file:
 redis_backup_gpg_key: disabled
 redis_backup_gpg_pw: ""
 redis_backup_gpg_opts: ''
+# When using S3, the user is the Access key ID and pass is the Secret
+redis_backup_target_user:
+redis_backup_target_pass:
 redis_backup_profiles:
   - name: redis
     schedule: "{{ redis_backup_schedule }}"
